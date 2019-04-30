@@ -19,11 +19,13 @@ $(document).ready(function(){
 
   $("#mSubmit").click(()=>{
     let data = {
-      user : $("#user").val(),
+      user: $("#user").val(),
       message: $("#message").val()
     };
 
-    $.post("http://localhost:3000",data ,(response)=>{
+    console.log(data);
+    
+    $.post("http://localhost:3000/saveMessage",data ,(response)=>{
       console.log("server has responded!");
       console.log("The server sent the following", response)
       $("#result").html("Your message has beeb received by the server")
