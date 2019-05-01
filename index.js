@@ -114,11 +114,20 @@ app.post("/saveMessage", (req, res) => {
                 // search for specific id for a entry in the database
                 allMessages = results;
                 console.log(allMessages[3]._id);
+
                 let objectToDelete = allMessages[3]._id;
+
+                //To delete an entry
                 messageModel.findByIdAndDelete(objectToDelete, (error,results)=>{
                   console.log(error, results);
                   console.log("The 4th item in the database was deleted!");
+                });
 
+                //
+                let objectToUpdate = allMessages[0].id;
+                messageModel.findByIdAndUpdate(, {user:"Phone"},(error, results)=> {
+                  console.log(error,results);
+                  console.log("The first item was updated.");
                 });
               });
           res.sendStatus(200);
