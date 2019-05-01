@@ -24,7 +24,6 @@ $(document).ready(function(){
     };
 
     console.log(data);
-    
     $.post("http://localhost:3000/saveMessage",data ,(response)=>{
       console.log("server has responded!");
       console.log("The server sent the following", response)
